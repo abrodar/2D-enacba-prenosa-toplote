@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {4.2}Testni primer 2: Dvodimenzionalna stacionarna rešitev}{16}{}%
 \contentsline {subsection}{\numberline {4.3}Vpliv toplotne difuzivnosti D}{16}{}%
 \contentsline {subsection}{\numberline {4.4}Stabilnost}{16}{}%
-\contentsline {section}{\numberline {5}Analiza napak in zaključek}{17}{}%
-\contentsline {subsection}{\numberline {5.1}Vpliv mreže}{17}{}%
-\contentsline {subsection}{\numberline {5.2}Vpliv tolerance}{17}{}%
-\contentsline {subsection}{\numberline {5.3}Zaključek}{17}{}%
+\contentsline {section}{\numberline {5}Analiza napak in zaključek}{18}{}%
+\contentsline {subsection}{\numberline {5.1}Vpliv mreže}{18}{}%
+\contentsline {subsection}{\numberline {5.2}Vpliv tolerance}{18}{}%
+\contentsline {subsection}{\numberline {5.3}Zaključek}{18}{}%

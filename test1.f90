@@ -14,7 +14,7 @@ program test1
     real(dp) :: change ! najvecja sprememba temperature 
     real(dp) :: tol ! toleranca (za ustaljeno stanje)
     real(dp) :: error ! najvecja absolutna napaka
-    real(dp) :: temp, max_temp, min_temp
+    real(dp) :: temp
     integer :: nt ! maksimalno število časovnih korakov 
     integer :: nx ! stevilo tock v x smer
     integer :: ny ! stevilo tock v y smer
@@ -67,16 +67,6 @@ program test1
             exit ! ustaljeno stanje
         end if
         T_PREV = T
-        ! blow up check - delete later
-        max_temp = maxval(T(1:ny, :)) 
-        min_temp = minval(T(1:ny, :)) 
-        if (max_temp > 100) then 
-            write(*, '(A, I0, A, ES12.4)') 'Blow up at ', k , 'th step with value ', max_temp
-            exit 
-        else if (min_temp < -1.0e-10_dp) then 
-            write(*, '(A, I0, A, ES12.4)') 'Blow up at ', k , 'th step with value ', min_temp
-            exit
-        end if
     end do 
 
     ! najvecja absolutna napaka
