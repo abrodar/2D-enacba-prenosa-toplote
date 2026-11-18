@@ -14,7 +14,7 @@ program test1
     real(dp) :: change ! najvecja sprememba temperature 
     real(dp) :: tol ! toleranca (za ustaljeno stanje)
     real(dp) :: error ! najvecja absolutna napaka
-    real(dp) :: temp
+    real(dp) :: temp, max_temp, min_temp
     integer :: nt ! maksimalno število časovnih korakov 
     integer :: nx ! stevilo tock v x smer
     integer :: ny ! stevilo tock v y smer
@@ -33,8 +33,8 @@ program test1
     allocate(T_PREV(0:ny+1, 1:nx))
     tol = 1.0e-12_dp
     nt = 100000
-    D = 1
-    dt = 0.5 / (D * ((1.0_dp / dx ** 2) + (1.0_dp / dy ** 2))) ! iz pogoja stabilnosti
+    D = 1_dp
+    dt = 0.5_dp / (D * ((1.0_dp / dx ** 2) + (1.0_dp / dy ** 2))) ! iz pogoja stabilnosti
     c1 = D * dt / dx ** 2
     c2 = D * dt / dy ** 2
     error = 0
@@ -67,11 +67,21 @@ program test1
             exit ! ustaljeno stanje
         end if
         T_PREV = T
+        ! blow up check - delete later
+        max_temp = maxval(T(1:ny, :)) 
+        min_temp = minval(T(1:ny, :)) 
+        if (max_temp > 100) then 
+            write(*, '(A, I0, A, ES12.4)') 'Blow up at ', k , 'th step with value ', max_temp
+            exit 
+        else if (min_temp < -1.0e-10_dp) then 
+            write(*, '(A, I0, A, ES12.4)') 'Blow up at ', k , 'th step with value ', min_temp
+            exit
+        end if
     end do 
 
     ! najvecja absolutna napaka
     do i = 1, nx
-        temp = abs(T(j, i) - (100 * (1 - (dx * (i - 1)) / L)))
+        temp = abs(T(1, i) - (100 * (1 - (dx * (i - 1)) / L))) !j = 1; resitev neodvisna od y
         if (temp > error) then 
             error = temp
         end if

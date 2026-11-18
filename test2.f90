@@ -38,7 +38,7 @@ program test2
     tol = 1.0e-12_dp
     nt = 100000
     D = 1
-    dt = 0.6_dp / (D * ((1.0_dp / dx ** 2) + (1.0_dp / dy ** 2))) ! iz pogoja stabilnosti
+    dt = 0.5_dp / (D * ((1.0_dp / dx ** 2) + (1.0_dp / dy ** 2))) ! iz pogoja stabilnosti
     c1 = D * dt / dx ** 2
     c2 = D * dt / dy ** 2
     T_PREV = 50.0_dp ! zacetna temperatura 
