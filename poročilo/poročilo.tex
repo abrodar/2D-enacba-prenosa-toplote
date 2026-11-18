@@ -251,7 +251,7 @@
 	kar imenujemo Laplaceova enačba. Ker smo enačbo lahko delili z $D$, ustaljeno stanje od $D$ ni odvisno: $D$ vpliva le na to, kako hitro plošča ustaljeno stanje doseže.
 	
 	\newpage
-	\section{Numerične metode}
+	\section{Numerična metoda}
 	
 	Najprej zgradimo dvodimenzionalno mrežo diskretnih točk, na kateri računamo rešitev.
 	
@@ -650,8 +650,14 @@
 	\newpage
 	\section{Rezultati}
 	
+	V tem razdelku prikažemo rezultate eksperimentov oz. izvajanja programa za oba testna primera. 
+	
 	% =====================================================================
 	\subsection{Testni primer 1: Linearni temperaturni profil}
+	
+	Na temperaturnem polju prvega testnega primera slike~\ref{fig:kontura1} opazimo enakomerno porazdeljene izoterme. Temperatura v domeni pada od leve proti desni. Izoterme so navpične oz. se temperatura po $y$ osi ne spreminja, $\frac{\partial T}{\partial y} = 0$.
+	
+	V tabeli~\ref{tab:mreza1} spreminjamo velikost mreže in spremljamo kako se spreminjajo št. korakov metode, njena maksimalna absolutna napak in pa čas izvajanja. Število korakov z bolj gosto mrežo narašča. Ravno tako se poveča čas izvajanja in izmerjena napaka.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -678,6 +684,10 @@
 	% =====================================================================
 	\subsection{Testni primer 2: Dvodimenzionalna stacionarna rešitev}
 	
+	V drugem testnem primeru opazimo na sliki~\ref{fig:kontura2} najvišje temperature pri spodnje robu domene. Izoterme imajo obliko ukrivljenih lokov. Večja kot je vrednost $y$ bolj postanejo loki ukrivljeni. Razmiki med njimi se z višino povečujejo. Temperatura z višino pada, hkrati postane nižja ob približevanju levemu ali desnemu robu.
+	
+	V tabeli~\ref{tab:mreza2} je razvidno kako se število korakov povečuje z več točkami v mreži kot pri prvem testnem primeru. Napaka se tokrat zmanjšuje napram napaki v prvem primeru. Izvajalni čas metode pa še vedno narašča.
+	
 	\begin{figure}[htbp]
 		\centering
 		\includegraphics[width=0.7\textwidth]{slike/T_test2_contour_20x20.png}
@@ -699,8 +709,53 @@
 		\caption{Testni primer~2: vpliv gostote mreže ($D = 1$, $\text{tol} = 10^{-12}$, $n_t = 10^5$). $E$ je največja absolutna napaka~\eqref{eq:napaka}.}
 		\label{tab:mreza2}
 	\end{table}
-	\subsection{Vpliv toplotne difuzivnosti D}
-	\subsection{Stabilnost}
+	
+	% =====================================================================
+	\subsection{Vpliv toplotne difuzivnosti $D$}
+	
+	Izvedemo poseben eksperiment za preverbo vpliva toplotne difuzivnosti $D$ na rešitev. Testiramo oba testna primera in sicer pri sledečih nastavitvah parametrov: $n_x=n_y=20, tol=10^{-12}, n_t = 10^5$. Testiramo eksperiment za sledeče vrednosti D parametra: $0.1$, $1$, $10$ in $100$.
+	
+	Na podlagi teorije pričakujemo sledeča tri opažanja. Prvič parameter $D$ naj ne bi vplival na ustaljeno stanje. Za ustaljeno stanje velja $\frac{\partial T}{\partial t} = 0$. Če to vstavimo v toplotno enačbo dobimo $0 = \nabla^2 T$, kjer smo lahko delili enačbo z $D$. Ustaljeno stanje je torej neodvisno od toplotne difuzivnosti. Naslednje opazimo, da bi moralo število korakov ostati enako. V glavni zanki se namreč v zgoraj definiranih členih $c_1$ in $c_2$ v imenovalcu pokrajša $D$ iz $D \cdot dt$:
+	\begin{equation}
+		D \cdot dt = D \frac{0.5}{D (\frac{1}{x^2} + \frac{1}{y^2})} = \frac{0.5}{(\frac{1}{x^2} + \frac{1}{y^2})}.
+	\end{equation}
+	Kot tretje je razvidno, da z večjim $D$ povečamo (fizikalni) čas. Ob upoštevanju diskretizacije tega definiramo kot $t = k \Delta t$ vstavimo člen $\Delta t$ v to enačbo in dobimo $t \propto \frac{k}{D}$.
+	
+	V obeh testnih primerih opazimo v tabeli~\ref{tab:D1} in tabeli~\ref{tab:D2}, da so teorija udejanji v praksi. Število korakov in napaka v obeh primerih ostaneta enaka pri vseh vrednostih $D$. Časovni korak se zmanjšuje za faktor $10$, ko $D$ povečamo za enak faktor. Ravno tako se zmanjšuje (fizikalni) čas po enakem pravilu.
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{lrrrr}
+			\toprule
+			$D$                  & 0{,}1                    & 1                        & 10                       & 100                      \\
+			\midrule
+			št.\ korakov $k$     & 1002                     & 1002                     & 1002                     & 1002                     \\
+			$E$                  & $3{,}51 \cdot 10^{-11}$ & $3{,}51 \cdot 10^{-11}$ & $3{,}51 \cdot 10^{-11}$ & $3{,}51 \cdot 10^{-11}$ \\
+			čas izvajanja [s]    & 0{,}007                  & 0{,}006                  & 0{,}007                  & 0{,}007                  \\
+			$\Delta t$           & $6{,}93 \cdot 10^{-3}$  & $6{,}93 \cdot 10^{-4}$  & $6{,}93 \cdot 10^{-5}$  & $6{,}93 \cdot 10^{-6}$  \\
+			$t = k\,\Delta t$    & $6{,}94$                 & $6{,}94 \cdot 10^{-1}$  & $6{,}94 \cdot 10^{-2}$  & $6{,}94 \cdot 10^{-3}$  \\
+			\bottomrule
+		\end{tabular}
+		\caption{Testni primer~1: vpliv toplotne difuzivnosti $D$ ($n_x = n_y = 20$, $\text{tol} = 10^{-12}$, $n_t = 10^5$).}
+		\label{tab:D1}
+	\end{table}
+	
+	\begin{table}[htbp]
+		\centering
+		\begin{tabular}{lrrrr}
+			\toprule
+			$D$                  & 0{,}1                    & 1                        & 10                       & 100                      \\
+			\midrule
+			št.\ korakov $k$     & 3140                     & 3140                     & 3140                     & 3140                     \\
+			$E$                  & $8{,}83 \cdot 10^{-2}$  & $8{,}83 \cdot 10^{-2}$  & $8{,}83 \cdot 10^{-2}$  & $8{,}83 \cdot 10^{-2}$  \\
+			čas izvajanja [s]    & 0{,}013                  & 0{,}013                  & 0{,}011                  & 0{,}013                  \\
+			$\Delta t$           & $6{,}93 \cdot 10^{-3}$  & $6{,}93 \cdot 10^{-4}$  & $6{,}93 \cdot 10^{-5}$  & $6{,}93 \cdot 10^{-6}$  \\
+			$t = k\,\Delta t$    & $2{,}17 \cdot 10^{1}$   & $2{,}17$                 & $2{,}17 \cdot 10^{-1}$  & $2{,}17 \cdot 10^{-2}$  \\
+			\bottomrule
+		\end{tabular}
+		\caption{Testni primer~2: vpliv toplotne difuzivnosti $D$ ($n_x = n_y = 20$, $\text{tol} = 10^{-12}$, $n_t = 10^5$).}
+		\label{tab:D2}
+	\end{table}
 	\newpage
 	\section{Analiza napak in zaključek}
 	\subsection{Vpliv mreže}

@@ -37,7 +37,7 @@ program test2
     allocate(T_PREV(0:ny+1, 1:nx))
     tol = 1.0e-12_dp
     nt = 100000
-    D = 1
+    D = 100_dp
     dt = 0.5_dp / (D * ((1.0_dp / dx ** 2) + (1.0_dp / dy ** 2))) ! iz pogoja stabilnosti
     c1 = D * dt / dx ** 2
     c2 = D * dt / dy ** 2
@@ -97,6 +97,10 @@ program test2
         end do
         write(10, *) ! end the line
     end do 
+
+    write(*, '(A, ES12.4)') 'Casovni korak dt: ', dt
+    write(*, '(A, ES12.4)') 'Fizikalni cas t = k*dt: ', steps * dt
+
 
     deallocate(T, T_PREV)
 end program

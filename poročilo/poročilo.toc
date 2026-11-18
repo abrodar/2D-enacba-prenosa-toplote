@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {1.4}Domena}{5}{}%
 \contentsline {subsection}{\numberline {1.5}Testna primera}{6}{}%
 \contentsline {subsection}{\numberline {1.6}Ustaljeno stanje}{7}{}%
-\contentsline {section}{\numberline {2}Numerične metode}{8}{}%
+\contentsline {section}{\numberline {2}Numerična metoda}{8}{}%
 \contentsline {subsection}{\numberline {2.1}Mreža}{8}{}%
 \contentsline {subsection}{\numberline {2.2}Diskretizacija enačbe modela}{8}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}Končne diference za prvi odvod}{9}{}%
@@ -26,10 +26,9 @@
 \contentsline {subsection}{\numberline {3.6}Izhod in napaka}{15}{}%
 \contentsline {section}{\numberline {4}Rezultati}{16}{}%
 \contentsline {subsection}{\numberline {4.1}Testni primer 1: Linearni temperaturni profil}{16}{}%
-\contentsline {subsection}{\numberline {4.2}Testni primer 2: Dvodimenzionalna stacionarna rešitev}{16}{}%
-\contentsline {subsection}{\numberline {4.3}Vpliv toplotne difuzivnosti D}{16}{}%
-\contentsline {subsection}{\numberline {4.4}Stabilnost}{16}{}%
-\contentsline {section}{\numberline {5}Analiza napak in zaključek}{18}{}%
-\contentsline {subsection}{\numberline {5.1}Vpliv mreže}{18}{}%
-\contentsline {subsection}{\numberline {5.2}Vpliv tolerance}{18}{}%
-\contentsline {subsection}{\numberline {5.3}Zaključek}{18}{}%
+\contentsline {subsection}{\numberline {4.2}Testni primer 2: Dvodimenzionalna stacionarna rešitev}{17}{}%
+\contentsline {subsection}{\numberline {4.3}Vpliv toplotne difuzivnosti $D$}{17}{}%
+\contentsline {section}{\numberline {5}Analiza napak in zaključek}{19}{}%
+\contentsline {subsection}{\numberline {5.1}Vpliv mreže}{19}{}%
+\contentsline {subsection}{\numberline {5.2}Vpliv tolerance}{19}{}%
+\contentsline {subsection}{\numberline {5.3}Zaključek}{19}{}%
