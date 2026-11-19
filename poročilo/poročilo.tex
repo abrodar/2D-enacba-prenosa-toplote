@@ -982,6 +982,12 @@
 	
 	\subsection{Zaključek}
 	
+	V projektni nalogi smo reševali dvodimenzionalno enačbo prenosa toplote z eksplicitno shemo (prema diferenca v času in centralna v prostoru) z navideznimi vozlišči za Neumannove pogoje. Metoda je bila zapisana v programskem jeziku Fortran in preverjena na dveh testnih primerih z znanimi rešitvami.
+	
+	Z vidika pravilnosti ugotovimo, da implementacija v drugem testnem primeru doseže red konvergence $p \approx 2$, kot smo napovedali s Taylorjevo vrsto. Napake metode imajo dva izvora. V prvem testnem primeru prevladuje napaka ustavitve, v drugem pa napaka mreže. Pri preučevanju parametra $D$ opazimo, da ne vpliva na število korakov ali ustaljeno stanje, temveč le na fizikalni čas, $t \propto \frac{1}{D}$. Eksperiment stabilnosti je potrdil pogoj $s \leq 0{,}5$: v drugem testnem primeru metoda že pri $s = 0{,}51$ postane nestabilna. Prvi testni primer se zaradi neodvisnosti rešitve od $y$ obnaša kot enodimenzionalni problem, zato je tam meja $s \leq 1$. Z vidika tolerance ugotovimo, da je edini strošek manjše tolerance dodatno število korakov metode, ko napaka mreže prevladuje nad napako ustavitve.
+	
+	Šibka lastnost eksplicitne sheme izhaja iz zveze $\Delta t \propto \Delta x^2$: goste mreže potrebujejo zelo veliko časovnih korakov. To omejitev bi lahko odpravili z implicitno shemo (npr.\ Crank--Nicolsonovo), ki nima pogoja stabilnosti. Če nas zanima le ustaljeno stanje, pa bi lahko Laplaceovo enačbo $\nabla^2 T = 0$ rešili neposredno z iteracijsko metodo, brez računanja v času.
+	
 	\newpage
 	\begin{thebibliography}{9}
 		\bibitem{dawkins}
