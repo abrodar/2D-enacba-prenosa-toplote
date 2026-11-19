@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.29)  18 NOV 2026 14:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.29)  19 NOV 2026 11:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -164,6 +164,9 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -501,20 +504,20 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./poro훾ilo.aux)
 \openout1 = `poro훾ilo.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -580,7 +583,7 @@ dvips/cm-super/cm-super-t1.enc}] (./poro훾ilo.toc)
 \openout4 = `poro훾ilo.toc'.
 
  [2]
-Overfull \hbox (5.78984pt too wide) in paragraph at lines 38--40
+Overfull \hbox (5.78984pt too wide) in paragraph at lines 39--41
 \T1/cmr/m/n/10.95 z me-todo kon�-nih di-fe-renc. Ena즒a opi-suje tem-pe-ra-turn
 o po-raz-de-li-tev objekta
  []
@@ -594,7 +597,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [6] [7] [8] [9] [10] [11] [12]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-14.
+16.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -603,7 +606,7 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 File: slike/T_test1_contour_20x20.png Graphic file (type png)
 <use slike/T_test1_contour_20x20.png>
 Package pdftex.def Info: slike/T_test1_contour_20x20.png  used on input line 66
-4.
+6.
 (pdftex.def)             Requested size: 251.9989pt x 212.06468pt.
 
 [16 <./slike/T_test1_contour_20x20.png>]
@@ -611,22 +614,36 @@ Package pdftex.def Info: slike/T_test1_contour_20x20.png  used on input line 66
 File: slike/T_test2_contour_20x20.png Graphic file (type png)
 <use slike/T_test2_contour_20x20.png>
 Package pdftex.def Info: slike/T_test2_contour_20x20.png  used on input line 69
-3.
+5.
 (pdftex.def)             Requested size: 251.9989pt x 212.06468pt.
- [17 <./slike/T_test2_contour_20x20.png>] [18] [19] [20] (./poro훾ilo.aux)
+ [17 <./slike/T_test2_contour_20x20.png>] [18] [19] [20]
+<slike/testcase1_errfield_20x20.png, id=100, 396.40096pt x 328.1058pt>
+File: slike/testcase1_errfield_20x20.png Graphic file (type png)
+<use slike/testcase1_errfield_20x20.png>
+Package pdftex.def Info: slike/testcase1_errfield_20x20.png  used on input line
+ 875.
+(pdftex.def)             Requested size: 172.79846pt x 143.03026pt.
+<slike/testcase2_errfield_20x20.png, id=101, 402.5439pt x 328.1058pt>
+File: slike/testcase2_errfield_20x20.png Graphic file (type png)
+<use slike/testcase2_errfield_20x20.png>
+Package pdftex.def Info: slike/testcase2_errfield_20x20.png  used on input line
+ 881.
+(pdftex.def)             Requested size: 172.79846pt x 140.84743pt.
+ [21] [22 <./slike/testcase1_errfield_20x20.png> <./slike/testcase2_errfield_20
+x20.png>] [23] [24] [25] (./poro훾ilo.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16038 strings out of 475509
- 319636 string characters out of 5776664
+ 16093 strings out of 475509
+ 321094 string characters out of 5776664
  1956975 words of memory out of 5000000
- 37784 multiletter control sequences out of 15000+600000
+ 37835 multiletter control sequences out of 15000+600000
  573674 words of font info for 71 fonts, out of 8000000 for 9000
  395 hyphenation exceptions out of 8191
- 84i,12n,93p,798b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,874b,846s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -649,10 +666,10 @@ fb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pf
 b>
-Output written on poro훾ilo.pdf (20 pages, 604996 bytes).
+Output written on poro훾ilo.pdf (25 pages, 713503 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
+ 225 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 27 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 
